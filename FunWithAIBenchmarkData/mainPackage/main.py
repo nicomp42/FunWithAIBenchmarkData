@@ -40,6 +40,17 @@ if __name__ == "__main__":
 
     #5. Perform some data visualization on the text. Research Data Vis libraries and apply one.
      
+    ## Starting
+    from wordcloud import WordCloud
+    import matplotlib.pyplot as plt
+
+    wordcloud = WordCloud(width = 800, height = 400, background_color = 'white').generate(prompt_text)
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis('off')
+    plt.show()
+    ## Ending
+
     #6a. Write all the questions and possible answers (with unique identifier field for each question.
     #6b. Write the question identifier (see 6a, above) and the cohout the correct answer) to a text file. Use a CSV format and create arrect answer to another text file. Use a CSV format.
     questions_written = write_questions_to_text_files("MMLU", questions)
